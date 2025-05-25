@@ -32,10 +32,15 @@ This project provides a Python client to interact with a ComfyUI instance for im
 
 ### 通过API运行工作流
 
-1.  **配置ComfyUI服务器地址**: 
-    *   在项目根目录下找到 `config.json` 文件。
-    *   修改 `comfyui_server_address` 字段为您ComfyUI服务器的实际地址和端口。例如：`"comfyui_server_address": "your_server_ip:port"`。
-    *   如果 `config.json` 文件不存在或无法正确解析，脚本将默认使用 `127.0.0.1:8188`。
+To run the workflow via the API, you first need to configure the ComfyUI server address. This is done by editing the `config.json` file located in the project root directory.
+
+1.  Open the `config.json` file.
+2.  Modify the `comfyui_server_address` field to your ComfyUI server's address and port.
+    *   **For local servers or direct IP/hostname access:** Use the format `"hostname:port"` or `"ip_address:port"` (e.g., `"127.0.0.1:8188"`, `"your-comfyui-server.com:8188"`). The script will automatically prepend `http://` for HTTP requests and `ws://` for WebSocket connections.
+    *   **For remote servers behind a proxy or requiring HTTPS:** If your server URL is something like `https://your-proxy.com/comfyui-api/`, you should typically enter the core part that the script will use to construct HTTP and WebSocket URLs. For example, if the ComfyUI API is accessible at `your-proxy.com/comfyui-api/` (and websockets at `wss://your-proxy.com/comfyui-api/ws`), you might need to configure it as `"your-proxy.com/comfyui-api"`. The script currently assumes HTTP/WS, so for HTTPS/WSS, you might need to adjust the script or ensure your proxy handles the protocol upgrade. **It's crucial to ensure the address in `config.json` correctly points to the ComfyUI API endpoint without the protocol prefix (`http://` or `https://`) unless your setup specifically requires it and the script is modified to handle it.**
+    *   **Example for a proxied HTTPS URL like `https://567795-proxy-8188.dsw-gateway-cn-shanghai.data.aliyun.com/`:** If this URL directly serves the ComfyUI API (including WebSocket on the same base path), you would likely set `comfyui_server_address` to `"567795-proxy-8188.dsw-gateway-cn-shanghai.data.aliyun.com"`. The script will attempt to connect via `http://` and `ws://`. If the service requires `https://` and `wss://`, the client script (`src/comfyui_client.py`) would need modification to support these protocols explicitly.
+
+If the `config.json` file does not exist or cannot be parsed, the script will default to using `127.0.0.1:8188`.
 2.  确保您的ComfyUI服务器正在运行，并且可以通过配置的地址访问。
 3.  打开命令行或终端。
 4.  导航到项目的根目录 (`Comfyui_Test`)。
