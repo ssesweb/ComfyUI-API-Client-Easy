@@ -1,0 +1,7 @@
+{
+    "comfyui_server_address": "127.0.0.1:8188",
+    "input_path": "C:\\Users\\Adminstor\\Downloads\\1688pics",
+    "output_dir": "C:\\Users\\Adminstor\\Downloads\\1688_Comfyui_Pics",
+    "workflow_path": "workflows\\默认去除背景20250529.json",
+    "limit": 0
+}

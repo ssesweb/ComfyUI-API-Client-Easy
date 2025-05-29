@@ -1,0 +1,155 @@
+{
+  "10": {
+    "inputs": {
+      "prompt": [
+        "41",
+        0
+      ],
+      "threshold": 0.40000000000000006,
+      "sam_model": [
+        "39",
+        0
+      ],
+      "grounding_dino_model": [
+        "34",
+        0
+      ],
+      "image": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "GroundingDinoSAMSegment (segment anything)",
+    "_meta": {
+      "title": "GroundingDinoSAMSegment (segment anything)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "width": 1600,
+      "height": 1600,
+      "crop": "disabled",
+      "image": [
+        "75",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "缩放图像"
+    }
+  },
+  "34": {
+    "inputs": {
+      "model_name": "GroundingDINO_SwinB (938MB)"
+    },
+    "class_type": "GroundingDinoModelLoader (segment anything2)",
+    "_meta": {
+      "title": "GroundingDinoModelLoader (segment anything2)"
+    }
+  },
+  "36": {
+    "inputs": {
+      "image": "D1001_O1CN01XpBjRz24NAyLR7cD0_!!2211349397378-0-cib.jpg"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "加载图像"
+    }
+  },
+  "39": {
+    "inputs": {
+      "model_name": "sam_vit_l (1.25GB)"
+    },
+    "class_type": "SAMModelLoader (segment anything)",
+    "_meta": {
+      "title": "SAMModelLoader (segment anything)"
+    }
+  },
+  "41": {
+    "inputs": {
+      "Text": "Toner Cartridge or Ink Cartridge"
+    },
+    "class_type": "DF_Text",
+    "_meta": {
+      "title": "Text"
+    }
+  },
+  "43": {
+    "inputs": {
+      "image_crop_multi": 1.1000000000000003,
+      "mask_crop_multi": 1.1000000000000003,
+      "bbox_smooth_alpha": 1,
+      "image": [
+        "10",
+        0
+      ],
+      "mask": [
+        "10",
+        1
+      ]
+    },
+    "class_type": "easy imageCropFromMask",
+    "_meta": {
+      "title": "遮罩裁剪图像"
+    }
+  },
+  "63": {
+    "inputs": {
+      "force_resize_width": 0,
+      "force_resize_height": 0,
+      "image": [
+        "43",
+        0
+      ],
+      "mask": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "Cut By Mask",
+    "_meta": {
+      "title": "Cut By Mask"
+    }
+  },
+  "64": {
+    "inputs": {
+      "mask": [
+        "43",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "遮罩转换为图像"
+    }
+  },
+  "70": {
+    "inputs": {
+      "filename_prefix": "Standard_prompt_words",
+      "images": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "保存图像"
+    }
+  },
+  "75": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "scale_by": 1.0000000000000002,
+      "image": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "缩放图像（比例）"
+    }
+  }
+}

@@ -22,12 +22,6 @@ output_*.jpg
 output_*.jpeg
 output_*.gif
 
-# Configuration files (if they contain sensitive info or local settings)
-config.json
-
-# Secrets - ensure these are not committed
-secrets.json
-*.key
 
 # ComfyUI specific (if any downloaded models or large files)
 models/
