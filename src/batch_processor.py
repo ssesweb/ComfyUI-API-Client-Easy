@@ -84,7 +84,7 @@ def get_images(ws, prompt):
 
 # 解析工作流并获取图片
 def parse_workflow(ws, image_path, prompt_text, workflow_file):
-    with open(workflow_file, 'r') as f:
+    with open(workflow_file, 'r', encoding='utf-8') as f:
         prompt = json.load(f)
 
     # Find the LoadImage node and update the image path
