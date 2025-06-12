@@ -5,7 +5,7 @@
         "41",
         0
       ],
-      "threshold": 0.40000000000000006,
+      "threshold": 0.4000000000000001,
       "sam_model": [
         "39",
         0
@@ -51,7 +51,7 @@
   },
   "36": {
     "inputs": {
-      "image": "D1001_O1CN01XpBjRz24NAyLR7cD0_!!2211349397378-0-cib.jpg"
+      "image": "D921_O1CN01EP9DD11CjAfsZcV4v_!!980260116-0-cib.jpg"
     },
     "class_type": "LoadImage",
     "_meta": {
@@ -60,7 +60,7 @@
   },
   "39": {
     "inputs": {
-      "model_name": "sam_vit_l (1.25GB)"
+      "model_name": "sam_hq_vit_h (2.57GB)"
     },
     "class_type": "SAMModelLoader (segment anything)",
     "_meta": {
